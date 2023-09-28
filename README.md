@@ -41,8 +41,29 @@ https://github.com/sharkdp/fd + https://github.com/junegunn/fzf
 https://starship.rs
 
 ```console
-# (...)
-echo "command_timeout = 1000" >> ~/.config/starship.toml
+curl -sS https://starship.rs/install.sh | sh \
+&& echo 'eval "$(starship init bash)"' >> ~/.bashrc \
+&& source ~/.bashrc \
+&& mkdir -p ~/.config \
+&& echo "command_timeout = 1000" >> ~/.config/starship.toml
+```
+
+Next, to unlock full functionality (emojis/glyphs), you need to configure your terminal(s) to use one of the Nerd Fonts. 
+
+Example for `FiraCode` font and Windows Terminal:
+1. Download FiraCode Nerd Font from https://www.nerdfonts.com/font-downloads
+2. Copy-paste all the mono-family fonts into C:\\Windows\Fonts  
+(For some reason, non-mono fonts don't work).
+3. Set Windows Terminal to use the new font  
+Put this under the `profiles` key in `settings.json`:
+```json
+"defaults": 
+{
+    "font": 
+    {
+        "face": "FiraCode Nerd Font Mono"
+    }
+}
 ```
 
 ### z
