@@ -1,0 +1,7 @@
+[user]
+        email = michalmzawadzki@gmail.com
+        name = trymzet
+[core]
+        editor = code --wait
+[init]
+        defaultBranch = main
