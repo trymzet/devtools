@@ -148,6 +148,11 @@ echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 ```
 
+Now, restart the shell:
+```bash
+exec "$SHELL"
+```
+
 ### pipx
 
 <https://github.com/pypa/pipx>
