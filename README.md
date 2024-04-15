@@ -123,7 +123,7 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 
 ### Rye
 
-<https://github.com/pyenv/pyenv>
+<https://github.com/astral-sh/rye>
 
 Installation:
 
