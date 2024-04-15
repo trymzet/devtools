@@ -86,14 +86,13 @@ Put this under the `profiles` key in `settings.json`:
 }
 ```
 
-### z
+### zoxide
 
-<https://github.com/rupa/z>
+<https://github.com/ajeetdsouza/zoxide>
 
 ```console
-sudo wget https://raw.githubusercontent.com/rupa/z/master/z.sh -O /usr/bin/z.sh && \
-    sudo chmod +x /usr/bin/z.sh && \
-    echo ". /usr/bin/z.sh" >> ~/.bashrc && \
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash && \
+    echo 'eval "$(zoxide init bash)"' >> ~/.bashrc && \
     . ~/.bashrc
 ```
 
