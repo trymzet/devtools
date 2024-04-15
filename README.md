@@ -4,23 +4,22 @@
 
 ### Linux
 
-- [exa](https://the.exa.website)
-- [bat](https://github.com/sharkdp/bat)
-- [ncdu](https://dev.yorhel.nl/ncdu)
-- [fd](https://github.com/sharkdp/fd) + [fzf](https://github.com/junegunn/fzf)
-- [Starship](https://starship.rs)
-- [z](https://github.com/rupa/z)
-- [htop](https://htop.dev)  
-- [lazydocker](https://github.com/jesseduffield/lazydocker)
-- [asciinema](https://asciinema.org)
-- [tree](https://en.wikipedia.org/wiki/Tree_(command))
-- [httpie](https://httpie.io)
-- [tldr](https://tldr.sh)
-- [pyenv](https://github.com/pyenv/pyenv)
-- [pipx](https://github.com/pypa/pipx)
-- [cookiecutter](https://github.com/cookiecutter/cookiecutter)
-- [litecli](https://github.com/dbcli/litecli)
-- [jq](https://jqlang.github.io/jq/)
+- [exa](#exa)
+- [bat](#bat)
+- [ncdu](#ncdu)
+- [fd + fzf](#fd--fzf)
+- [Starship](#starship)
+- [zoxide](#zoxide)
+- [htop](#htop)  
+- [lazydocker](#lazydocker)
+- [asciinema](#asciinema)
+- [tree](#tree)
+- [httpie](#httpie)
+- [tldr](#tldr)
+- [Rye](#rye)
+- [Copier](#copier)
+- [litecli](#litecli)
+- [jq](#jq)
 
 ### Kubernetes
 
@@ -122,46 +121,27 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
 
 <https://tldr.sh>
 
-### pyenv
+### Rye
 
 <https://github.com/pyenv/pyenv>
-
-Prerequisites:
-
-```console
-sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev \
-  libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils \
-  tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-```
 
 Installation:
 
 ```console
-curl https://pyenv.run | bash
+curl -sSf https://rye-up.com/get | bash
 ```
 
 Configuration (bash):
 ```bash
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'source "$HOME/.rye/env"' >> ~/.profile && . ~/.bashrc
 ```
 
-Now, restart the shell:
-```bash
-exec "$SHELL"
-```
+### Copier
 
-### pipx
-
-<https://github.com/pypa/pipx>
-
-### Cookiecutter
-
-<https://github.com/cookiecutter/cookiecutter>
+<https://github.com/copier-org/copier>
 
 ```console
-pipx install cookiecutter
+rye install copier
 ```
 
 ### litecli
@@ -169,7 +149,7 @@ pipx install cookiecutter
 <https://github.com/dbcli/litecli>
 
 ```console
-pipx install litecli
+rye install litecli
 ```
 
 ### jq
