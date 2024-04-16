@@ -37,6 +37,9 @@ fix_wsl2_interop() {
 }
 fix_wsl2_interop
 
+# Fixes random VSCode error, see eg. https://github.com/microsoft/vscode-remote-release/issues/6362
+export VSCODE_IPC_HOOK_CLI="$( \ls 2>/dev/null -1 -t /tmp/vscode-ipc-*.sock | head -n 1 )"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -48,34 +51,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# pnpm
-export PNPM_HOME="${HOME}/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 eval "$(direnv hook bash)"
-
-eval $(ssh-agent)
-
+eval $(ssh-agent &>/dev/null)
 eval "$(starship init bash)"
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-export WINDOWS_HOME=$(wslpath "$(wslvar USERPROFILE)")
-export PATH=$PATH:$HOME/.local/bin
+eval "$(rye self completion -s bash)"
+eval "$(zoxide init bash)"
 
 complete -o default -F __start_kubectl k
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-. /usr/bin/z.sh
-
-export COOKIECUTTER_CONFIG=~/.cookiecutters/config.yaml
-
-# Required for using cache when using GitHub action locally with nektos/act
-export ACT_CACHE_AUTH_KEY=foo
