@@ -1,61 +1,57 @@
 # devtools
 
-## Tools
+## Table of contents
 
-### Linux
+- [Linux](#linux)
+    - [exa](#exa)
+    - [bat](#bat)
+    - [ncdu](#ncdu)
+    - [fd + fzf](#fd--fzf)
+    - [Starship](#starship)
+    - [zoxide](#zoxide)
+    - [htop](#htop)
+    - [lazydocker](#lazydocker)
+    - [asciinema](#asciinema)
+    - [tree](#tree)
+    - [httpie](#httpie)
+    - [tldr](#tldr)
+    - [Rye](#rye)
+    - [Copier](#copier)
+    - [litecli](#litecli)
+    - [jq](#jq)
+- [Kubernetes](#kubernetes)
+- [Web](#web)
+    - [pnpm](#pnpm)
 
-- [exa](#exa)
-- [bat](#bat)
-- [ncdu](#ncdu)
-- [fd + fzf](#fd--fzf)
-- [Starship](#starship)
-- [zoxide](#zoxide)
-- [htop](#htop)  
-- [lazydocker](#lazydocker)
-- [asciinema](#asciinema)
-- [tree](#tree)
-- [httpie](#httpie)
-- [tldr](#tldr)
-- [Rye](#rye)
-- [Copier](#copier)
-- [litecli](#litecli)
-- [jq](#jq)
+## Linux
 
-### Kubernetes
+### [exa](https://the.exa.website)
 
-- [kubie](https://github.com/sbstp/kubie)
-- [kind](https://github.com/kubernetes-sigs/kind)
-- [k9s](https://github.com/derailed/k9s)
-- [kubecolor](https://github.com/hidetatz/kubecolor)
-- [helm](https://helm.sh)
-- [helm-secrets](https://github.com/jkroepke/helm-secrets)
-- [sops](https://github.com/getsops/sops)
-
-### exa
-
-<https://the.exa.website>
+A modern replacement for `ls`, with syntax highlighting, etc.
 
 `alias ls='exa -lh'`
 
-### bat
+### [bat](https://github.com/sharkdp/bat)
 
-<https://github.com/sharkdp/bat>
+A modern replacement for `cat`, with syntax highlighting, etc.
 
 `alias cat='batcat'`
 
-### ncdu
+### [ncdu](https://dev.yorhel.nl/ncdu)
 
-<https://dev.yorhel.nl/ncdu>
+A modern replacement for `du` (disk space usage), with a nice TUI.
 
 `alias du='ncdu'`
 
-### fd + fzf
+### [fd](https://github.com/sharkdp/fd) + [fzf](https://github.com/junegunn/fzf)
 
-<https://github.com/sharkdp/fd> + <https://github.com/junegunn/fzf>
+Modern replacements for `find`: a human-usable `find` and a fuzzy finder.
 
-### Starship
+### [Starship](https://starship.rs)
 
-<https://starship.rs>
+Beautiful shell prompts.
+
+#### Installation
 
 ```console
 curl -sS https://starship.rs/install.sh | sh \
@@ -85,9 +81,11 @@ Put this under the `profiles` key in `settings.json`:
 }
 ```
 
-### zoxide
+### [zoxide](https://github.com/ajeetdsouza/zoxide)
 
-<https://github.com/ajeetdsouza/zoxide>
+`cd` on steroids.
+
+#### Installation
 
 ```console
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash && \
@@ -95,35 +93,35 @@ curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | 
     . ~/.bashrc
 ```
 
-### htop
+### [htop](https://htop.dev)
 
-<https://htop.dev>
+A modern replacement for `top`, with a nice TUI.
 
-### lazydocker
+### [lazydocker](https://github.com/jesseduffield/lazydocker)
 
-<https://github.com/jesseduffield/lazydocker>
+A nice TUI for Docker.
 
-### asciinema
+### [asciinema](https://asciinema.org)
 
-<https://asciinema.org>
+Record and share terminal sessions.
 
-### tree
+### [tree](https://en.wikipedia.org/wiki/Tree_(command))
 
-<https://en.wikipedia.org/wiki/Tree_(command)>
+Print directory structure in ASCII.
 
 `sudo apt install tree`
 
-### httpie
+### [httpie](https://httpie.io)
 
-<https://httpie.io>
+A modern replacement for cURL.
 
-### tldr
+### [tldr](https://tldr.sh)
 
-<https://tldr.sh>
+A modern replacement for `man`.
 
-### Rye
+### [Rye](https://github.com/astral-sh/rye)
 
-<https://github.com/astral-sh/rye>
+21st-century Python project and package management.
 
 Installation:
 
@@ -132,40 +130,75 @@ curl -sSf https://rye-up.com/get | bash
 ```
 
 Configuration (bash):
+
 ```bash
 echo 'source "$HOME/.rye/env"' >> ~/.profile && . ~/.bashrc
 ```
 
-### Copier
+### [Copier](https://github.com/copier-org/copier)
 
-<https://github.com/copier-org/copier>
+Project templates with Jinja.
 
 ```console
 rye install copier
 ```
 
-### litecli
+### [litecli](https://github.com/dbcli/litecli)
 
-<https://github.com/dbcli/litecli>
+A CLI for SQLite with auto-completion and syntax highlighting.
 
 ```console
 rye install litecli
 ```
 
-### jq
+### [jq](https://jqlang.github.io/jq/)
 
-<https://jqlang.github.io/jq/>
+Parse and pretty-print JSON in the command line.
 
 ```console
 sudo apt install jq -y
 ```
 
-## Prompt (WIP)
+## Kubernetes
 
-Create a markdown document including an automated script to install below developer tools. The document should also include a summary of each tool. Remember that official installation instructions often omit critical steps, such as adding the installed Python package to `PATH` (so you need to ensure `export PATH=$PATH:$HOME/.local/bin` is in `~/.bashrc`), or adding an init script to `~/.bashrc` (eg. `eval "$(starship init bash)"`), so make sure to add these where required.
+### Core
 
-The user has the following system set up:
+#### [kubie](https://github.com/sbstp/kubie)
 
-- OS: Windows + WSL 2 (Ubuntu 22.04)
-- shell: bash
-- terminal: Windows Terminal and VSCode
+A powerful, flexible Kubernetes context switcher.
+
+#### [kind](https://github.com/kubernetes-sigs/kind)
+
+Kubernetes in Docker - perfect for local development and CI.
+
+#### [k9s](https://github.com/derailed/k9s)
+
+A terminal interface to interact with your Kubernetes clusters.
+
+#### [kubecolor](https://github.com/hidetatz/kubecolor)
+
+Colorizes `kubectl` output.
+
+### Helm
+
+#### [helm](https://helm.sh)
+
+The package manager for Kubernetes.
+
+#### [helm-secrets](https://github.com/jkroepke/helm-secrets
+
+A helm plugin that help manage secrets with Git workflow and store them anywhere.
+
+### Encryption
+
+#### [sops](https://github.com/getsops/sops)
+
+Simple and flexible tool for managing secrets.
+
+## Web
+
+### [pnpm](https://pnpm.io/installation)
+
+```console
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
