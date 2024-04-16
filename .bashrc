@@ -51,13 +51,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+complete -o default -F __start_kubectl k
+
+. "$HOME/.cargo/env"
+. "$HOME/.rye/env"
+
 eval "$(direnv hook bash)"
 eval $(ssh-agent &>/dev/null)
 eval "$(starship init bash)"
 eval "$(rye self completion -s bash)"
-eval "$(zoxide init bash)"
-
-complete -o default -F __start_kubectl k
+eval "$($HOME/.local/bin/zoxide init bash)"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

@@ -14,3 +14,6 @@ alias g=git
 alias ghcs="gh copilot suggest"
 alias rec="asciinema rec"
 alias gpf="git push --force-with-lease"
+alias gpsu='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+alias gl="git log --oneline"
+alias gs='git log --pretty=format:"%h%x09%an%x09%ad%x09%s" -i --name-status --grep'

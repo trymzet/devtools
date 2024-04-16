@@ -29,8 +29,6 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-. "$HOME/.cargo/env"
-. "$HOME/.rye/env"
 
 # pnpm
 export PNPM_HOME="${HOME}/.local/share/pnpm"
@@ -41,6 +39,4 @@ esac
 
 # Required for using cache when using GitHub action locally with nektos/act
 export ACT_CACHE_AUTH_KEY=foo
-
 export WINDOWS_HOME=$(wslpath "$(wslvar USERPROFILE)")
-export PATH=$PATH:$HOME/.local/bin
