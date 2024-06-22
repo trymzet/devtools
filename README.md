@@ -19,6 +19,7 @@
     - [Copier](#copier)
     - [litecli](#litecli)
     - [jq](#jq)
+    - [ripgrep](#ripgrep)
 - [Kubernetes](#kubernetes)
 - [Web](#web)
     - [pnpm](#pnpm)
@@ -157,6 +158,12 @@ Parse and pretty-print JSON in the command line.
 
 ```console
 sudo apt install jq -y
+```
+
+### [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+```console
+brew install ripgrep
 ```
 
 ## Kubernetes
