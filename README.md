@@ -127,7 +127,7 @@ A modern replacement for `man`.
 Installation:
 
 ```console
-curl -sSf https://rye-up.com/get | bash
+curl -sSf https://rye.astral.sh/get | bash
 ```
 
 Configuration (bash):
