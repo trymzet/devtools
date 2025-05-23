@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Linux](#linux)
-    - [exa](#exa)
+    - [eza](#eza)
     - [bat](#bat)
     - [ncdu](#ncdu)
     - [fd + fzf](#fd--fzf)
@@ -15,7 +15,7 @@
     - [tree](#tree)
     - [httpie](#httpie)
     - [tldr](#tldr)
-    - [Rye](#rye)
+    - [uv](#uv)
     - [Copier](#copier)
     - [litecli](#litecli)
     - [jq](#jq)
@@ -26,11 +26,11 @@
 
 ## Linux
 
-### [exa](https://the.exa.website)
+### [eza](https://github.com/eza-community/eza)
 
 A modern replacement for `ls`, with syntax highlighting, etc.
 
-`alias ls='exa -lh'`
+`alias ls='eza -lh'`
 
 ### [bat](https://github.com/sharkdp/bat)
 
@@ -120,20 +120,14 @@ A modern replacement for cURL.
 
 A modern replacement for `man`.
 
-### [Rye](https://github.com/astral-sh/rye)
+### [uv](https://github.com/astral-sh/uv)
 
 21st-century Python project and package management.
 
 Installation:
 
 ```console
-curl -sSf https://rye.astral.sh/get | bash
-```
-
-Configuration (bash):
-
-```bash
-echo 'source "$HOME/.rye/env"' >> ~/.profile && . ~/.bashrc
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### [Copier](https://github.com/copier-org/copier)
@@ -141,7 +135,7 @@ echo 'source "$HOME/.rye/env"' >> ~/.profile && . ~/.bashrc
 Project templates with Jinja.
 
 ```console
-rye install copier
+uv install copier
 ```
 
 ### [litecli](https://github.com/dbcli/litecli)
@@ -149,7 +143,7 @@ rye install copier
 A CLI for SQLite with auto-completion and syntax highlighting.
 
 ```console
-rye install litecli
+uv install litecli
 ```
 
 ### [jq](https://jqlang.github.io/jq/)

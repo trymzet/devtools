@@ -2,7 +2,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias grep="grep --color=auto"
 alias python=python3
-alias ls="exa -lh --icons"
+alias ls="eza -lh --icons"
 alias cat=batcat
 alias du=ncdu
 alias top=htop
