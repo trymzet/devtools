@@ -20,6 +20,7 @@
     - [litecli](#litecli)
     - [jq](#jq)
     - [ripgrep](#ripgrep)
+    - [ripgrep-all](#ripgrep-all)
 - [Kubernetes](#kubernetes)
 - [Web](#web)
     - [pnpm](#pnpm)
@@ -156,8 +157,18 @@ sudo apt install jq -y
 
 ### [ripgrep](https://github.com/BurntSushi/ripgrep)
 
+Recursively search directories for a regex pattern while respecting your gitignore.
+
 ```console
 brew install ripgrep
+```
+
+### [ripgrep-all](https://github.com/phiresky/ripgrep-all)
+
+Like `ripgrep`, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
+
+```console
+brew install rga pandoc poppler ffmpeg
 ```
 
 ## Kubernetes
